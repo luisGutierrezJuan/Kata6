@@ -7,7 +7,7 @@ import toys.*;
 public class Kata6 {
 
     public static void main(String[] args) {
-        SerialNumberGenerator generator = new SerialNumberGenerator();
+        ToyBusiness business = new ToyBusiness();
         
         Scanner in = new Scanner(System.in);
         String line = "";
@@ -18,20 +18,14 @@ public class Kata6 {
         while (!"exit".equals(line = in.nextLine())){
             switch (line) { 
                 case "car":
-                    Car car = new Car(generator.next());
-                    car.pack();
-                    car.label();
-                    coches.add(car);
+                    coches.add(business.createCar());
                     System.out.println(
                             "Coches: " + coches.stream()
                                     .map(coche -> coche.getSerialNumber().toString())
                                     .collect(Collectors.joining(", ")));
                     break;
                 case "helicopter":
-                    Helicopter helicopter = new Helicopter(generator.next());
-                    helicopter.pack();
-                    helicopter.label();
-                    helicopteros.add(helicopter);
+                    helicopteros.add(business.createHelicopter());
                     System.out.println(
                             "Helicopteros: " + helicopteros.stream()
                                     .map(h -> h.getSerialNumber().toString())
