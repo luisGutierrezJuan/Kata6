@@ -17,7 +17,7 @@ public class Helicopter {
     }
     
     public void pack(){
-        System.out.printf("Packing '%s' '%d'\n", this.type, this.serialNumber);
+        System.out.printf("Packing '%s' '%d'\n",  this.type, this.serialNumber);
     }
     
     public void label(){

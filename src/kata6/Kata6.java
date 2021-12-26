@@ -35,7 +35,7 @@ public class Kata6 {
                     System.out.println(
                             "Helicopteros: " + helicopteros.stream()
                                     .map(h -> h.getSerialNumber().toString())
-                                    .collect(Collectors.joining(", ")));
+                                    .collect(Collectors.joining(", ")) );
                     break;
                 default:
                     System.out.println("Command unkown");
