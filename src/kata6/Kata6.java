@@ -2,6 +2,7 @@ package kata6;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import toyproduct.Toy;
 import toys.*;
 
 public class Kata6 {
@@ -12,23 +13,16 @@ public class Kata6 {
         Scanner in = new Scanner(System.in);
         String line = "";
         
-        ArrayList<Car> coches = new ArrayList<Car>();
-        ArrayList<Helicopter> helicopteros = new ArrayList<Helicopter>();
+        ArrayList<Toy> toys = new ArrayList<Toy>();
         
         while (!"exit".equals(line = in.nextLine())){
             switch (line) { 
                 case "car":
-                    coches.add(business.createCar());
-                    System.out.println(
-                            "Coches: " + coches.stream()
-                                    .map(coche -> coche.getSerialNumber().toString())
-                                    .collect(Collectors.joining(", ")));
-                    break;
                 case "helicopter":
-                    helicopteros.add(business.createHelicopter());
+                    toys.add(business.createToy(line));
                     System.out.println(
-                            "Helicopteros: " + helicopteros.stream()
-                                    .map(h -> h.getSerialNumber().toString())
+                            "Juguetes: " + toys.stream()
+                                    .map(h -> h.toString())
                                     .collect(Collectors.joining(", ")) );
                     break;
                 default:
@@ -36,6 +30,6 @@ public class Kata6 {
                     break;
             }
         }
-        System.out.println("Fin de la ejecución");
+        System.out.println("Fin de la ejecución.");
     } 
 }
